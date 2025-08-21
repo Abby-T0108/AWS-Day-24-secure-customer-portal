@@ -1,23 +1,44 @@
 # AWS-Day-24-secure-customer-portal
 
-What I delivered today
+Customer Portal Security Checklist
+This project shows how I built a secure customer-facing portal in AWS following best practices for network security, application security, monitoring, access control, and compliance.
 
-I designed and deployed a Customer Portal Security Architecture that implements enterprise-grade protections across network, application, monitoring and compliance layers in AWS.
+Architecture Overview
+Network Security
+1. VPC with private and public subnet separation
+2. Security groups with least privilege access
+3. No direct internet access to application servers
+4. NAT Gateway for outbound traffic only
 
-Proof it works
-1. Network Security: VPC with public/private subnet separation, least-privilege security groups, and no direct internet access to backend systems.
-2. Application Security: WAF configured to block malicious traffic, HTTPS-ready with certificate integration, and load balancer health checks in place.
-3. Monitoring & Alerting: CloudWatch dashboards for real-time visibility, alarms for error spikes, and WAF metrics for attack tracking.
-4. Access Control: SSH access locked to admin IPs, database restricted to web servers only, and load balancer as the single secure entry point.
-5. Compliance Ready: Logging and monitoring enabled, security documentation maintained, and incident response metrics tracked.
+Application Security
+1. WAF protection against common attacks
+2. HTTPS-ready (certificate can be added)
+3. Load balancer health checks configured
+4. Application servers deployed in private subnet
 
-Results that matter
-1. Prevents data breaches by isolating sensitive workloads in private subnets.
-2. Stops common attacks at the edge with AWS WAF.
-3. Guarantees uptime with load balancer failover and health checks.
-4. Improves visibility through CloudWatch monitoring and alerting.
-5. Meets compliance requirements with full documentation and metrics.
+Monitoring and Alerting
+1. CloudWatch dashboard for key metrics
+2. Alarms for high error rates
+3. WAF metrics tracking blocked requests
+4. Application performance monitoring
 
-Why it matters
-This project demonstrates how to secure a customer-facing application following AWS best practices.
-The architecture ensures resilience against threats, aligns with compliance standards and provides a strong foundation for businesses scaling in the cloud.
+Access Control
+1. SSH access restricted to admin IP only
+2. Database access limited to web servers only
+3. No public access to backend systems
+4. Load balancer as the single entry point
+
+Compliance Ready
+1. All traffic logged and monitored
+2. Security controls documented
+3. Incident response metrics available
+4. Architecture designed using AWS best practices
+
+What I built
+1. A security-focused architecture that includes:
+2. Network isolation with public and private subnets
+3. WAF blocking malicious traffic at the edge
+4. Access controls through security groups and IAM
+5. High availability with load balancer failover
+6. Monitoring and alerting using CloudWatch
+7. Documentation of the entire security checklist
